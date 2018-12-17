@@ -18,11 +18,11 @@ public class leprechaun
     public static final String VERSION = "0.1";
 
     @SidedProxy(clientSide = "ingoleth.leprechaun.proxy.ClientProxy", serverSide = "ingoleth.leprechaun.proxy.ServerProxy")
+    public static CommonProxy proxy;
     
     @Mod.Instance
     public static leprechaun instance;
     
-    public static CommonProxy proxy;
     
     private static Logger logger;
 
@@ -30,6 +30,7 @@ public class leprechaun
     public void preInit(FMLPreInitializationEvent event)
     {
         logger = event.getModLog();
+        proxy.preInit(event);
     }
 
     @Mod.EventHandler

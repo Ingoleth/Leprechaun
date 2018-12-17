@@ -31,7 +31,6 @@ public class EntityLeprechaun extends EntityCreature {
 	        // Here we set various attributes for our mob. Like maximum health, armor, speed, ...
 	        this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(35.0D);
 	        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.13D);
-	        this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
 	        this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(2.0D);
 	        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(50.0D);
 	    }

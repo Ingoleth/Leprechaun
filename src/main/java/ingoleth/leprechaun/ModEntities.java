@@ -1,5 +1,6 @@
 package ingoleth.leprechaun;
 
+
 import ingoleth.leprechaun.mob.EntityLeprechaun;
 import ingoleth.leprechaun.mob.RenderLeprechaun;
 import net.minecraft.util.ResourceLocation;
@@ -13,8 +14,7 @@ public class ModEntities {
     public static void init() {
         int id = 1;
 
-        EntityRegistry.registerModEntity(new ResourceLocation(leprechaun.MODID, "leprechaun_leprechaun"), EntityLeprechaun.class, "leprechaun_leprechaun", id++,
-                leprechaun.instance, 64, 3, true, 0x1f6337, 0xe0c112);
+        EntityRegistry.registerModEntity(new ResourceLocation(leprechaun.MODID, "leprechaun_mob"), EntityLeprechaun.class, "leprechaun", id++, leprechaun.instance, 64, 3, false, 0x1f6337, 0xe0c112);
     }
 
     @SideOnly(Side.CLIENT)

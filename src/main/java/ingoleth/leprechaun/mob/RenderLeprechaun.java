@@ -11,7 +11,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderLeprechaun extends RenderLiving<EntityLeprechaun> {
 
-    private ResourceLocation mobTexture = new ResourceLocation("mymod:textures/entity/leprechaun.png");
+    private ResourceLocation mobTexture = new ResourceLocation("leprechaun:textures/entity/leprechaun.png");
 
     public RenderLeprechaun(RenderManager renderManagerIn) {
         super(renderManagerIn, new ModelLeprechaun(), 0.5F);
