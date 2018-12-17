@@ -1,0 +1,16 @@
+[
+{
+  "modid": "leprechaun",
+  "name": "Leprechaun",
+  "description": "What's found at the end of the rainbow.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Ingoleth"],
+  "credits": "The Forge and FML guys, Mcjty for it's tutorials",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
