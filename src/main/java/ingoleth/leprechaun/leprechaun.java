@@ -36,8 +36,7 @@ public class leprechaun
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
-        // some example code
-        logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+
     }
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {

@@ -1,6 +1,7 @@
 package ingoleth.leprechaun.proxy;
 
 import ingoleth.leprechaun.ModEntities;
+import ingoleth.leprechaun.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
@@ -14,6 +15,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class CommonProxy {
     public void preInit(FMLPreInitializationEvent e) {
     	ModEntities.init();
+    	ModItems.init();
     }
 
     public void init(FMLInitializationEvent e) {

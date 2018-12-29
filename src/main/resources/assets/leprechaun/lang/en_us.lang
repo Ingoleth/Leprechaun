@@ -1,0 +1,9 @@
+
+entity.leprechaun.name=Leprechaun
+
+item.leprechaun_gold.name= Leprechaun's Gold
+leprechaun.tooltip.leprechaun_gold_description.name=Pretty much worthless, but it does pack a punch when thrown...
+
+leprechaun.subtitle.leprechaun_throws=Leprechaun throws gold
+leprechaun.subtitle.leprechaun_laughs=Leprechaun laughs
+leprechaun.subtitle.leprechaun_hurts=Leprechaun hurts

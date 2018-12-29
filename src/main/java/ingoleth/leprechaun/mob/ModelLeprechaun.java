@@ -3,11 +3,17 @@ package ingoleth.leprechaun.mob;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.util.math.MathHelper;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * Leprechaun - Ingoleth
  * Created using Tabula 5.1.0
  */
+
+@SideOnly(Side.CLIENT)
 public class ModelLeprechaun extends ModelBase {
     public ModelRenderer body;
     public ModelRenderer head;
@@ -45,7 +51,11 @@ public class ModelLeprechaun extends ModelBase {
     public ModelRenderer shoeRight3;
     public ModelRenderer tailLeft2;
     public ModelRenderer tailRight2;
-
+    	    
+    protected float degToRad(float degrees){
+    	        return degrees * (float)Math.PI / 180 ;
+    	    }
+    	    
     public ModelLeprechaun() {
         this.textureWidth = 64;
         this.textureHeight = 64;
@@ -229,6 +239,94 @@ public class ModelLeprechaun extends ModelBase {
         this.body.render(f5);
     }
 
+    
+    public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entityIn){
+    	setRotateAngle(head, (float) (headPitch * Math.PI / 360), (float) (netHeadYaw * Math.PI / 360), 0);	
+    }
+    int test = 0;
+    public void setLivingAnimations(EntityLivingBase entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTickTime){
+    	super.setLivingAnimations(entitylivingbaseIn, limbSwing, limbSwingAmount, partialTickTime);
+		EntityLeprechaun leprechaun = (EntityLeprechaun) entitylivingbaseIn;
+    	
+    	float time = entitylivingbaseIn.ticksExisted*0.15F;
+    	float throwProgress = leprechaun.getThrowProgress(partialTickTime);
+		 
+		
+		
+		if (!leprechaun.isThrowing()) {
+		body.rotateAngleX = degToRad(5) + degToRad(1)*MathHelper.sin(time);
+		armRight.rotateAngleZ = -body.rotateAngleX;
+		armLeft.rotateAngleZ = body.rotateAngleX;
+		legRight1.rotateAngleZ = armRight.rotateAngleZ;
+		legLeft1.rotateAngleZ = armLeft.rotateAngleZ;
+		body.rotateAngleY = 0;
+		
+		}else {
+			//body.rotateAngleY = time;
+			
+			//System.out.println("I am here!" + " Throw duration: " + throwProgress);
+			if (throwProgress <= 0.2) {
+				this.armLeft.rotateAngleX += (degToRad(-75) - this.armLeft.rotateAngleX)*throwProgress*0.5F;
+				this.armLeft.rotateAngleY += (degToRad(-20) - this.armLeft.rotateAngleY)*throwProgress*0.5F;
+				this.armRight.rotateAngleX += (degToRad(-70) - armRight.rotateAngleX)*throwProgress*0.5F;
+				this.armRight.rotateAngleY += (degToRad(30) - armRight.rotateAngleY)*throwProgress*0.5F;
+				this.armLeft.rotateAngleZ += (degToRad(5) - this.armLeft.rotateAngleZ)*throwProgress*0.5F;
+				this.cauldronHandle.rotateAngleX += (degToRad(30) - this.cauldronHandle.rotateAngleX)*throwProgress*0.5F;
+				this.cauldronHandle.rotateAngleY += (degToRad(5) - cauldronHandle.rotateAngleY)*throwProgress*0.5F;
+				this.cauldronLid.rotateAngleX += (degToRad(40) - cauldronLid.rotateAngleX)*throwProgress*0.5F;
+
+				//System.out.println("Look!, I went through the first phase!");
+			}else if (throwProgress <= 0.3) {//Gold search
+				//TODO
+			}else if (throwProgress <= 0.5) {//throw pose
+				body.rotateAngleX += (degToRad(-5) - body.rotateAngleX)*(throwProgress-0.3)*0.5F;
+				body.rotateAngleY += (degToRad(-20) - body.rotateAngleY)*(throwProgress-0.3)*0.5F;
+				legRight1.rotateAngleX += (degToRad(10) - legRight1.rotateAngleX)*(throwProgress-0.3)*0.5F;
+				legLeft1.rotateAngleX = legRight1.rotateAngleX;
+				armRight.rotateAngleX += (degToRad(-220) - armRight.rotateAngleX)*(throwProgress-0.3F)*0.5F;
+				armRight.rotateAngleY += (degToRad(30) - armRight.rotateAngleY)*(throwProgress-0.3F)*0.5F;
+				armLeft.rotateAngleX += (degToRad(-60) - armLeft.rotateAngleX)*(throwProgress-0.3F)*0.5F;
+				armLeft.rotateAngleY += (degToRad(-30) - armLeft.rotateAngleY)*(throwProgress-0.3F)*0.5F;
+				cauldronLid.rotateAngleX = (degToRad(60) - cauldronLid.rotateAngleX)*(throwProgress-0.3F)*0.5F;
+				//System.out.println("Look!, I went through the third phase!");
+			}else if (throwProgress <= 0.6){//Launch arm swirl;
+				//TODO
+			}else if (throwProgress <= 0.8) {//Launch pose + gold throw;
+				body.rotateAngleX += (degToRad(10) - body.rotateAngleX)*(throwProgress-0.6)*0.5F;
+				body.rotateAngleY += (degToRad(20) - body.rotateAngleY)*(throwProgress-0.6)*0.5F;
+				legRight1.rotateAngleX += (degToRad(-10) - legRight1.rotateAngleX)*(throwProgress-0.6)*0.5F;
+				legLeft1.rotateAngleX = legRight1.rotateAngleX;
+				armRight.rotateAngleX += (degToRad(-100) - armRight.rotateAngleX)*(throwProgress-0.6)*0.5F;
+				armRight.rotateAngleY += (degToRad(10) - armRight.rotateAngleY)*(throwProgress-0.6)*0.5F;
+				armLeft.rotateAngleX += (degToRad(-60) - armLeft.rotateAngleX)*(throwProgress-0.6)*0.5F;
+				armLeft.rotateAngleY += (degToRad(30) - armLeft.rotateAngleY)*(throwProgress-0.6)*0.5F;
+				cauldronLid.rotateAngleX += (degToRad(-30) - cauldronLid.rotateAngleX)*(throwProgress-0.6)*0.5F;
+				//System.out.println("Look!, I went through the fifth phase!");
+
+				
+			}else if (throwProgress <= 1) {// Return to base position;
+				body.rotateAngleX += (degToRad(5) - body.rotateAngleX)*(throwProgress-0.8)*0.5F;
+				body.rotateAngleY += (degToRad(0) - body.rotateAngleY)*(throwProgress-0.8)*0.5F;
+				armRight.rotateAngleX += (degToRad(-5) - armRight.rotateAngleX)*(throwProgress-0.8)*0.5F;
+				armRight.rotateAngleY += (degToRad(0) - armRight.rotateAngleY)*(throwProgress-0.8)*0.5F;
+				armLeft.rotateAngleX += (degToRad(-5) - armLeft.rotateAngleX)*(throwProgress-0.8)*0.5F;
+				armLeft.rotateAngleY += (degToRad(0) - armLeft.rotateAngleY)*(throwProgress-0.8)*0.5F;
+				cauldronLid.rotateAngleX += (degToRad(0) - cauldronLid.rotateAngleX)*(throwProgress-0.8)*0.5F;				
+				cauldronHandle.rotateAngleX += (degToRad(8) - cauldronHandle.rotateAngleX)*(throwProgress-0.8)*0.5F;				
+				cauldronHandle.rotateAngleY += (degToRad(0) - cauldronHandle.rotateAngleY)*(throwProgress-0.8)*0.5F;	
+				//System.out.println("Look!, I went through the last phase!");
+				
+
+			}
+			
+			
+		}
+
+
+    }
+    
+    
+    
     /**
      * This is a helper function from Tabula to set the rotation of model parts
      */

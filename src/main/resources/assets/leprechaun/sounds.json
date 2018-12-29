@@ -1,0 +1,30 @@
+{
+"leprechaun.throw": {
+		"sounds": [
+			"leprechaun:mob/leprechaun/throw1"
+		],
+		"subtitle": "leprechaun.subtitle.leprechaun_throws"
+	},
+"leprechaun.ambient": {
+		"sounds": [
+			"leprechaun:mob/leprechaun/ambient1",
+			"leprechaun:mob/leprechaun/ambient2",
+			"leprechaun:mob/leprechaun/ambient3"
+		],
+		"subtitle": "leprechaun.subtitle.leprechaun_laughs"
+	},
+"leprechaun.death": {
+		"sounds": [
+			"leprechaun:mob/leprechaun/death"
+		],
+		"subtitle": "leprechaun.subtitle.leprechaun_dies"
+	},
+"leprechaun.hurt": {
+		"sounds": [
+			"leprechaun:mob/leprechaun/hurt1",
+			"leprechaun:mob/leprechaun/hurt2",
+			"leprechaun:mob/leprechaun/hurt3"
+		],
+		"subtitle": "leprechaun.subtitle.leprechaun_hurts"
+	}
+}
