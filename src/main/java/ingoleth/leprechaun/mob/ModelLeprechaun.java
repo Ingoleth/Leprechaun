@@ -266,54 +266,54 @@ public class ModelLeprechaun extends ModelBase {
 			
 			//System.out.println("I am here!" + " Throw duration: " + throwProgress);
 			if (throwProgress <= 0.2) {
-				this.armLeft.rotateAngleX += (degToRad(-75) - this.armLeft.rotateAngleX)*throwProgress*0.5F;
-				this.armLeft.rotateAngleY += (degToRad(-20) - this.armLeft.rotateAngleY)*throwProgress*0.5F;
-				this.armRight.rotateAngleX += (degToRad(-70) - armRight.rotateAngleX)*throwProgress*0.5F;
-				this.armRight.rotateAngleY += (degToRad(30) - armRight.rotateAngleY)*throwProgress*0.5F;
-				this.armLeft.rotateAngleZ += (degToRad(5) - this.armLeft.rotateAngleZ)*throwProgress*0.5F;
-				this.cauldronHandle.rotateAngleX += (degToRad(30) - this.cauldronHandle.rotateAngleX)*throwProgress*0.5F;
-				this.cauldronHandle.rotateAngleY += (degToRad(5) - cauldronHandle.rotateAngleY)*throwProgress*0.5F;
-				this.cauldronLid.rotateAngleX += (degToRad(40) - cauldronLid.rotateAngleX)*throwProgress*0.5F;
+				this.armLeft.rotateAngleX += degToRad(-75)*throwProgress*0.5F;
+				this.armLeft.rotateAngleY += degToRad(-20)*throwProgress*0.5F;
+				this.armRight.rotateAngleX += degToRad(-70)*throwProgress*0.5F;
+				this.armRight.rotateAngleY += degToRad(30)*throwProgress*0.5F;
+				this.armLeft.rotateAngleZ += degToRad(5)*throwProgress*0.5F;
+				this.cauldronHandle.rotateAngleX += degToRad(30)*throwProgress*0.5F;
+				this.cauldronHandle.rotateAngleY += degToRad(5)*throwProgress*0.5F;
+				this.cauldronLid.rotateAngleX += degToRad(40)*throwProgress*0.5F;
 
 				//System.out.println("Look!, I went through the first phase!");
 			}else if (throwProgress <= 0.3) {//Gold search
 				//TODO
 			}else if (throwProgress <= 0.5) {//throw pose
-				body.rotateAngleX += (degToRad(-5) - body.rotateAngleX)*(throwProgress-0.3)*0.5F;
-				body.rotateAngleY += (degToRad(-20) - body.rotateAngleY)*(throwProgress-0.3)*0.5F;
-				legRight1.rotateAngleX += (degToRad(10) - legRight1.rotateAngleX)*(throwProgress-0.3)*0.5F;
+				body.rotateAngleX += degToRad(-5)*(throwProgress-0.3)*0.5F;
+				body.rotateAngleY += degToRad(-20)*(throwProgress-0.3)*0.5F;
+				legRight1.rotateAngleX += degToRad(10)*(throwProgress-0.3)*0.5F;
 				legLeft1.rotateAngleX = legRight1.rotateAngleX;
-				armRight.rotateAngleX += (degToRad(-220) - armRight.rotateAngleX)*(throwProgress-0.3F)*0.5F;
-				armRight.rotateAngleY += (degToRad(30) - armRight.rotateAngleY)*(throwProgress-0.3F)*0.5F;
-				armLeft.rotateAngleX += (degToRad(-60) - armLeft.rotateAngleX)*(throwProgress-0.3F)*0.5F;
-				armLeft.rotateAngleY += (degToRad(-30) - armLeft.rotateAngleY)*(throwProgress-0.3F)*0.5F;
-				cauldronLid.rotateAngleX = (degToRad(60) - cauldronLid.rotateAngleX)*(throwProgress-0.3F)*0.5F;
+				armRight.rotateAngleX += degToRad(-220)*(throwProgress-0.3F)*0.5F;
+				armRight.rotateAngleY += degToRad(30)*(throwProgress-0.3F)*0.5F;
+				armLeft.rotateAngleX += degToRad(-60)*(throwProgress-0.3F)*0.5F;
+				armLeft.rotateAngleY += degToRad(-30)*(throwProgress-0.3F)*0.5F;
+				cauldronLid.rotateAngleX = degToRad(60)*(throwProgress-0.3F)*0.5F;
 				//System.out.println("Look!, I went through the third phase!");
 			}else if (throwProgress <= 0.6){//Launch arm swirl;
 				//TODO
 			}else if (throwProgress <= 0.8) {//Launch pose + gold throw;
-				body.rotateAngleX += (degToRad(10) - body.rotateAngleX)*(throwProgress-0.6)*0.5F;
-				body.rotateAngleY += (degToRad(20) - body.rotateAngleY)*(throwProgress-0.6)*0.5F;
-				legRight1.rotateAngleX += (degToRad(-10) - legRight1.rotateAngleX)*(throwProgress-0.6)*0.5F;
+				body.rotateAngleX += degToRad(10)*(throwProgress-0.6)*0.5F;
+				body.rotateAngleY += degToRad(20)*(throwProgress-0.6)*0.5F;
+				legRight1.rotateAngleX += degToRad(-10)*(throwProgress-0.6)*0.5F;
 				legLeft1.rotateAngleX = legRight1.rotateAngleX;
-				armRight.rotateAngleX += (degToRad(-100) - armRight.rotateAngleX)*(throwProgress-0.6)*0.5F;
-				armRight.rotateAngleY += (degToRad(10) - armRight.rotateAngleY)*(throwProgress-0.6)*0.5F;
-				armLeft.rotateAngleX += (degToRad(-60) - armLeft.rotateAngleX)*(throwProgress-0.6)*0.5F;
-				armLeft.rotateAngleY += (degToRad(30) - armLeft.rotateAngleY)*(throwProgress-0.6)*0.5F;
-				cauldronLid.rotateAngleX += (degToRad(-30) - cauldronLid.rotateAngleX)*(throwProgress-0.6)*0.5F;
+				armRight.rotateAngleX += degToRad(-100)*(throwProgress-0.6)*0.5F;
+				armRight.rotateAngleY += degToRad(10)*(throwProgress-0.6)*0.5F;
+				armLeft.rotateAngleX += degToRad(-60)*(throwProgress-0.6)*0.5F;
+				armLeft.rotateAngleY += degToRad(30)*(throwProgress-0.6)*0.5F;
+				cauldronLid.rotateAngleX += degToRad(-30)*(throwProgress-0.6)*0.5F;
 				//System.out.println("Look!, I went through the fifth phase!");
 
 				
 			}else if (throwProgress <= 1) {// Return to base position;
-				body.rotateAngleX += (degToRad(5) - body.rotateAngleX)*(throwProgress-0.8)*0.5F;
-				body.rotateAngleY += (degToRad(0) - body.rotateAngleY)*(throwProgress-0.8)*0.5F;
-				armRight.rotateAngleX += (degToRad(-5) - armRight.rotateAngleX)*(throwProgress-0.8)*0.5F;
-				armRight.rotateAngleY += (degToRad(0) - armRight.rotateAngleY)*(throwProgress-0.8)*0.5F;
-				armLeft.rotateAngleX += (degToRad(-5) - armLeft.rotateAngleX)*(throwProgress-0.8)*0.5F;
-				armLeft.rotateAngleY += (degToRad(0) - armLeft.rotateAngleY)*(throwProgress-0.8)*0.5F;
-				cauldronLid.rotateAngleX += (degToRad(0) - cauldronLid.rotateAngleX)*(throwProgress-0.8)*0.5F;				
-				cauldronHandle.rotateAngleX += (degToRad(8) - cauldronHandle.rotateAngleX)*(throwProgress-0.8)*0.5F;				
-				cauldronHandle.rotateAngleY += (degToRad(0) - cauldronHandle.rotateAngleY)*(throwProgress-0.8)*0.5F;	
+				body.rotateAngleX += degToRad(5)*(throwProgress-0.8)*0.5F;
+				body.rotateAngleY += degToRad(0)*(throwProgress-0.8)*0.5F;
+				armRight.rotateAngleX += degToRad(-5)*(throwProgress-0.8)*0.5F;
+				armRight.rotateAngleY += degToRad(0)*(throwProgress-0.8)*0.5F;
+				armLeft.rotateAngleX += degToRad(-5)*(throwProgress-0.8)*0.5F;
+				armLeft.rotateAngleY += degToRad(0)*(throwProgress-0.8)*0.5F;
+				cauldronLid.rotateAngleX += degToRad(0)*(throwProgress-0.8)*0.5F;				
+				cauldronHandle.rotateAngleX += degToRad(8)*(throwProgress-0.8)*0.5F;				
+				cauldronHandle.rotateAngleY += degToRad(0)*(throwProgress-0.8)*0.5F;	
 				//System.out.println("Look!, I went through the last phase!");
 				
 
